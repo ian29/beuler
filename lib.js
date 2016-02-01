@@ -6,4 +6,5 @@ function isPrime(n) {
   return true;
 }
 
+module.exports = {};
 module.exports.isPrime = isPrime;

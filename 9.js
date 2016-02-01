@@ -2,7 +2,9 @@
 // b = 2mn
 // c = m^2 + n^2
 
+// ( m^2 - n^2) * (2mn) * (m^2 + n^2) === 1000
 // m(m + n) = 500
+
 // the smallest n we have to test is 0, which means we only havet to test
 //   m < Math.sqrt(500)
 

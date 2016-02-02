@@ -7,6 +7,7 @@ for (var x = 1; x < 1000; x++) {
     if (pals(b) && b > a) a = b;
   }
 }
+
 console.log(a);
 
 function pals(n) {

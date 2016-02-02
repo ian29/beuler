@@ -1,3 +1,4 @@
+var isPrime = require('./lib').isPrime;
 
 console.log(lcm(process.argv[2]));
 
@@ -12,14 +13,6 @@ function lcm(n) {
   }
   for (i in o) answer *= Math.pow(i, o[i]);
   return answer;
-}
-
-function isPrime(n) {
-  if (n === 2) return true;
-  var sq = Math.sqrt(n);
-  if (n % 2 === 0 || n % sq === 0) return false;
-  for (var p = 3; p < sq; p += 2) if (n % p === 0) return false;
-  return true;
 }
 
 function primeFactors(n) {

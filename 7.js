@@ -1,4 +1,4 @@
-var isPrime = require('./lib.js').isPrime();
+var isPrime = require('./lib.js').isPrime;
 
 var n = process.argv[2];
 var i = 0;

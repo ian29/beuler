@@ -12,7 +12,6 @@ var tri = 0
 for (var i = 1; factors(tri).length < 500; i++) {
   tri += i;
   if (tri % 2 !== 0) continue;
-  console.log(factors(tri).length, tri);
 }
 
 console.log(tri);

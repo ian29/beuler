@@ -6,5 +6,26 @@ function isPrime(n) {
   return true;
 }
 
+function primeFactors(n) {
+  if (n === 1) return [ 1 ];
+  if (isPrime(n)) return [ 1, n ];
+  var factors = [];
+  var d = 2;
+
+  while (n > 1) {
+    while (n % d == 0) {
+      factors.push(d);
+      n /= d;
+    }
+    d++;
+    if (d*d > n) {
+      if (n > 1) factors.push(n);
+      break;
+    }
+  }
+  return factors;
+}
+
 module.exports = {};
 module.exports.isPrime = isPrime;
+module.exports.primeFactors = primeFactors;

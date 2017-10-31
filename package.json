@@ -1,0 +1,29 @@
+{
+  "name": "beuler",
+  "version": "0.0.0",
+  "description": "meh",
+  "main": "1.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "tape": "^4.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "eslint . && tape test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ian29/beuler.git"
+  },
+  "keywords": [
+    "nah"
+  ],
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ian29/beuler/issues"
+  },
+  "homepage": "https://github.com/ian29/beuler"
+}

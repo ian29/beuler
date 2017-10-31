@@ -1,9 +1,7 @@
 'use strict';
 
-var n = process.argv[2];
-//var ans = Math.pow(2, 2*n)
-
 /*
+possible paths per node matrix:
 1(1) matrix = [ 1 ]
 1(2) matrix = [ 1, 1 ]
 1(3) matrix = [ 1, 1, 1 ]
@@ -18,21 +16,25 @@ var n = process.argv[2];
                 [ 1, 1, 1 ] ]
 */
 
+
+// input should be 21 for project euler purposes
+// (20 cells = 21 nodes)
+var n = process.argv[2] || 21;
+
 const matrix = [];
 
 for (var x = 0; x < n; x++) {
-  let row = [ 1 ];
-  for (var y = 1; y < n; y++) {
-    if (x === 0) row.push(1);
-    else if (x === 1) row.push(y + 1);
+  let row = [];
+  for (var y = 0; y < n; y++) {
+    if (x === 0 || y === 0) row.push(1); // seed first column/row with 1s
     else {
       let above = matrix[x - 1][y];
-      let left = row[y-1]
-      row.push(above + left)
+      let left = row[y - 1];
+      row.push(above + left);
     }
   }
-
   matrix.push(row)
 }
 
-console.log(matrix);
+if (process.env.SHOW) console.log(matrix)
+console.log(matrix[n - 1][n - 1]);

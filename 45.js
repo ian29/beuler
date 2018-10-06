@@ -15,7 +15,7 @@ function pentagonal(p) {
 }
 
 function hexagonal(n) {
-  var d = 0;
+  var d = 1;
   while (d < n/d) {
     if ( n % d === 0 && n/d === 2 * d - 1) { console.log('hexagonal', d); return true; }
     d++;
@@ -23,6 +23,21 @@ function hexagonal(n) {
   return false;
 }
 
-console.log(hexagonal(process.argv[2]));
-//console.log(pentagonal(process.argv[2]));
-//console.log(triangular(process.argv[2]));
+// d = 40755
+let n = 144; 
+let p = false, t = false;
+
+while (!p || !t) {
+  p = pentagonal(nextHex(n));
+  t = triangular(nextHex(n));
+  n++;
+}
+
+console.log(`
+n: ${n - 1}
+number: ${nextHex(n - 1)}
+`);
+
+function nextHex(n) {
+  return n * ((2*n) - 1)
+};
